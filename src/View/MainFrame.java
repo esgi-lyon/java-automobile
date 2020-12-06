@@ -14,19 +14,19 @@ public class MainFrame extends JFrame {
         super("Java Swing MVC");
         cardLayout = new CardLayout();
         Form form = new Form();
-        UserDetails userDetails = new UserDetails();
+        AbstractDetails abstractDetails = new UserAbstractDetails();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
         // initialize user controller
-        new UserController(form, userDetails);
+        new UserController(form, abstractDetails);
 
         // adds view to card layout with unique constraints
         add(form, "form");
-        add(userDetails, "user details");
+        add(abstractDetails, "user details");
         // switch view according to its constraints on click
         form.viewUsers(e -> cardLayout.show(MainFrame.this.getContentPane(), "user details"));
-        userDetails.backButton(e -> cardLayout.show(MainFrame.this.getContentPane(), "form"));
+        abstractDetails.backButton(e -> cardLayout.show(MainFrame.this.getContentPane(), "form"));
 
         // icon for our application
         ImageIcon imageIcon = new ImageIcon("src/assets/appicon.png");

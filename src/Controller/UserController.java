@@ -3,7 +3,7 @@ package Controller;
 import Model.Database;
 import Model.User;
 import View.Form;
-import View.UserDetails;
+import View.AbstractDetails;
 
 import javax.swing.*;
 import java.io.File;
@@ -13,12 +13,12 @@ public class UserController {
     private String databaseFile = "src/assets/users.txt";
     private Database database;
     private Form form;
-    private UserDetails userDetails;
+    private AbstractDetails abstractDetails;
 
-    public UserController(Form form, UserDetails userDetails) {
+    public UserController(Form form, AbstractDetails abstractDetails) {
         this.database = new Database();
         this.form = form;
-        this.userDetails = userDetails;
+        this.abstractDetails = abstractDetails;
 
         // submit user
         this.form.submitUsers(e -> {
@@ -43,7 +43,7 @@ public class UserController {
 
         // load users
         this.form.viewUsers(e -> {
-            this.userDetails.getUsers(this.database.loadUsers(new File(databaseFile)));
+            this.abstractDetails.getDetails(this.database.loadUsers(new File(databaseFile)));
         });
     }
 }

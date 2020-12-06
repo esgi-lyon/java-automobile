@@ -5,24 +5,28 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class UserDetails extends JPanel {
+/**
+ * @TODO Transform this class in CRUD generator
+ */
+abstract public class AbstractDetails extends JPanel {
 
     // Table for user data
-    private JTable userTable;
+    private JTable table;
     // table column
-    private String[] userTableColumn = {"FIRST NAME", "LAST NAME"};
+    private String[] tableColumn = {};
 
     // back button
     private JButton backButton;
 
-    public UserDetails() {
+    public AbstractDetails(String[] tableColumn) {
+        this.tableColumn = tableColumn;
         // uses box layout
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         // toolbar for buttons
         JToolBar toolBar = new JToolBar();
-        userTable = new JTable();
+        table = new JTable();
         // scroll bar for table
-        JScrollPane userTableScroll = new JScrollPane(userTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+        JScrollPane userTableScroll = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         backButton = new JButton("Go Back");
         add(toolBar);
@@ -33,11 +37,11 @@ public class UserDetails extends JPanel {
     }
 
     // gets users from database and loads to table
-    public void getUsers(Object[] objects) {
-        DefaultTableModel defaultTableModel = (DefaultTableModel) userTable.getModel();
+    public void getDetails(Object[] objects) {
+        DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         // Prevenir l'ajout de colonne alors qu'on a déjà les data
         defaultTableModel.setRowCount(0);
-        defaultTableModel.setColumnIdentifiers(userTableColumn);
+        defaultTableModel.setColumnIdentifiers(tableColumn);
         for (Object o: objects) {
             String row = o.toString().trim();
             String[] rows = row.split(",");
