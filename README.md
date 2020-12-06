@@ -3,10 +3,15 @@
 1. Git
 
 Merge vs rebase :
+
 ![Rebase vs merge](http://cdn.differencebetween.net/wp-content/uploads/2018/11/Difference-Between-Git-Rebase-and-Merge-.png)
 
 Staging area &rarr; repo local &rarr; remote
+
 ![Remote / local](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
+
+### Commandes
+
 ```sh
 # Bases
 git status # Consulter l'état de la staging area
