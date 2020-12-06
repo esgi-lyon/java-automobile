@@ -35,13 +35,13 @@ public class UserDetails extends JPanel {
     // gets users from database and loads to table
     public void getUsers(Object[] objects) {
         DefaultTableModel defaultTableModel = (DefaultTableModel) userTable.getModel();
+        // Prevenir l'ajout de colonne alors qu'on a déjà les data
+        defaultTableModel.setRowCount(0);
         defaultTableModel.setColumnIdentifiers(userTableColumn);
-        int i = 0;
-        while(i < objects.length) {
-            String row = objects[i].toString().trim();
+        for (Object o: objects) {
+            String row = o.toString().trim();
             String[] rows = row.split(",");
             defaultTableModel.addRow(rows);
-            i++;
         }
     }
 

@@ -89,3 +89,6 @@ hs_err_pid*
 
 # Mac
 .DS_Store
+
+# specific to project
+src/assets/*.txt
