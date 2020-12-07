@@ -1,10 +1,10 @@
 package View;
 
-public class UserAbstractDetails extends AbstractDetails {
+public class UserDetails extends AbstractDetails {
 
     static String[] tableColumn = {"FIRST NAME", "LAST NAME"};
 
-    public UserAbstractDetails() {
+    public UserDetails() {
         super(tableColumn);
     }
 }
