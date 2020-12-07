@@ -13,12 +13,12 @@ public class UserController {
     private String databaseFile = "src/assets/users.txt";
     private EntityManager entityManager;
     private UserForm userForm;
-    private AbstractDetails abstractDetails;
+    private AbstractDetails userDetails;
 
     public UserController(UserForm userForm, AbstractDetails abstractDetails) {
         this.entityManager = new EntityManager();
         this.userForm = userForm;
-        this.abstractDetails = abstractDetails;
+        this.userDetails = abstractDetails;
 
         // submit user
         this.userForm.submitUsers(e -> {
@@ -43,7 +43,7 @@ public class UserController {
 
         // load users
         this.userForm.viewUsers(e -> {
-            this.abstractDetails.getDetails(this.entityManager.loadEntities(new File(databaseFile)));
+            this.userDetails.getDetails(this.entityManager.loadEntities(new File(databaseFile)));
         });
     }
 }

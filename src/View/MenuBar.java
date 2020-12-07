@@ -6,8 +6,6 @@ import javax.swing.*;
 
 /**
  * MenuBar class.
- *
- * @author Nafaa Friaa (nafaa.friaa@isetjb.rnu.tn)
  */
 public class MenuBar extends JMenuBar
 {
