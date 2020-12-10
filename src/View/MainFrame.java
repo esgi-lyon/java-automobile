@@ -3,7 +3,6 @@ package View;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
@@ -17,7 +16,7 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         setLayout(cardLayout);
         // sets our layout as a card layout
-        new UsersPanel(cardLayout, this);
+        new ClientPanel(cardLayout, this);
 
         // icon for our application
         ImageIcon imageIcon = new ImageIcon("src/assets/appicon.png");
