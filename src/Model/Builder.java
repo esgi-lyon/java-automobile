@@ -1,6 +1,6 @@
 package Model;
 
-import Model.Car.CarBrand;
+import Model.Car.Car;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class Builder {
     /**
      *
      */
-    public ArrayList<CarBrand> availableBrands;
+    public ArrayList<Car> availableCars;
 
 
     /**
@@ -35,6 +35,7 @@ public class Builder {
     };
 
     protected boolean isSupportedCar() {
+        // search in cars list
         return false;
     }
 }
