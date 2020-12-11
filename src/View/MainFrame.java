@@ -1,5 +1,6 @@
 package View;
 
+import View.Car.CarPanel;
 import View.Client.ClientPanel;
 
 import javax.swing.*;
@@ -19,9 +20,10 @@ public class MainFrame extends JFrame {
         setLayout(cardLayout);
         // sets our layout as a card layout
         new ClientPanel(cardLayout, this);
+        new CarPanel(cardLayout, this);
 
         // icon for our application
-        ImageIcon imageIcon = new ImageIcon("src/assets/appicon.png");
+        ImageIcon imageIcon = new ImageIcon("appicon.png");
         setIconImage(imageIcon.getImage());
         // frame width & height
         int FRAME_WIDTH = 1200;
@@ -50,25 +52,6 @@ public class MainFrame extends JFrame {
                usersPanel.setVisible(true);
             }
         }); */
-
-
-            // jMenuItemFrameAbout :
-            /*
-            menuBar.jMenuItemFrameAbout.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent ev) {
-                    frameAbout.setVisible(true);
-                }
-            });
-
-            // jMenuItemFrame1 :
-            menuBar.jMenuItemFrame1.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent ev) {
-                    frame1.setVisible(true);
-                }
-            });
-
-            */
-
     }
 
     /**

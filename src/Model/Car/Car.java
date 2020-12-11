@@ -20,6 +20,11 @@ public class Car {
      */
     public CarModel type;
 
+    @Override
+    public String toString() {
+        return carBrand +
+                ", " + type;
+    }
 
     /**
      * 

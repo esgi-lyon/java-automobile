@@ -6,8 +6,6 @@ import View.MainFrame;
 import java.awt.*;
 
 public class ClientPanel {
-
-
     public ClientPanel(CardLayout cardLayout, MainFrame mainFrame) throws HeadlessException {
         ClientForm clientForm = new ClientForm();
         ClientDetails clientDetails = new ClientDetails();
