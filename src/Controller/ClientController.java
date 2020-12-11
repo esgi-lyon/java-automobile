@@ -2,7 +2,7 @@ package Controller;
 
 import Model.EntityManager;
 import Model.Client;
-import View.ClientForm;
+import View.Client.ClientForm;
 import View.AbstractDetails;
 import javax.swing.*;
 import java.io.File;

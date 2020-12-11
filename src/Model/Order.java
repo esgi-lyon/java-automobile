@@ -2,7 +2,7 @@ package Model;
 
 import Model.Car.Car;
 
-public class Order {
+public class Order implements Entity{
 
     private int id;
 
@@ -14,6 +14,15 @@ public class Order {
 
     private Car car;
 
+    private Builder builder;
+
     public Order() {
+    }
+
+    @Override
+    public String toString() {
+        return id +
+                ", " + car +
+                ", " + builder;
     }
 }

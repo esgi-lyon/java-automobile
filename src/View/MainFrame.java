@@ -1,5 +1,7 @@
 package View;
 
+import View.Client.ClientPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

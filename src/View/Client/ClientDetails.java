@@ -1,4 +1,6 @@
-package View;
+package View.Client;
+
+import View.AbstractDetails;
 
 public class ClientDetails extends AbstractDetails {
 

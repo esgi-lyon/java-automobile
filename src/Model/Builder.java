@@ -4,7 +4,7 @@ import Model.Car.Car;
 
 import java.util.ArrayList;
 
-public class Builder {
+public class Builder implements Entity{
 
     /**
      * Default constructor
@@ -37,5 +37,10 @@ public class Builder {
     protected boolean isSupportedCar() {
         // search in cars list
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return availableCars.toString(); // Verify data is comma separated list
     }
 }

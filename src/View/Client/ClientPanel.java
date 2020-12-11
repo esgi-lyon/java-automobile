@@ -1,6 +1,7 @@
-package View;
+package View.Client;
 
 import Controller.ClientController;
+import View.MainFrame;
 
 import java.awt.*;
 
