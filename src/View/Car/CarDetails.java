@@ -4,7 +4,7 @@ import View.AbstractDetails;
 
 public class CarDetails extends AbstractDetails {
 
-    static String[] tableColumn = {""};
+    static String[] tableColumn = {"Modele", "Marque"};
     public CarDetails() {
         super(tableColumn);
     }

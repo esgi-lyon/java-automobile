@@ -12,5 +12,6 @@ public class CarController {
 
     public CarController(AbstractDetails abstractDetails) {
         this.entityManager = new EntityManager();
+        // Handle actions here and views data recuperation
     }
 }

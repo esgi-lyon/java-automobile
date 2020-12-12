@@ -2,6 +2,7 @@ package View;
 
 import View.Car.CarPanel;
 import View.Client.ClientPanel;
+import View.Order.OrderPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ public class MainFrame extends JFrame {
     // Card layout for switching view
     public CardLayout cardLayout;
     private MenuBar menuBar = new MenuBar();
+    public Home home = new Home();
 
     public MainFrame() {
         super("Automobile Market");
@@ -19,8 +21,10 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         setLayout(cardLayout);
         // sets our layout as a card layout
-        new ClientPanel(cardLayout, this);
-        new CarPanel(cardLayout, this);
+        add(home, "Home");
+        new ClientPanel(cardLayout, this, home);
+        new CarPanel(cardLayout, this, home);
+        new OrderPanel(cardLayout, this, home);
 
         // icon for our application
         ImageIcon imageIcon = new ImageIcon("appicon.png");
@@ -47,9 +51,12 @@ public class MainFrame extends JFrame {
                 }
             }
         });
-        /* menuBar.jMenuItemFrameUsers.addActionListener(new ActionListener() {
+        /**
+         * TODO show dialog with infos about project
+         */
+        /* menuBar.jMenuItemAbout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
-               usersPanel.setVisible(true);
+               aboutdDialog.setVisible(true);
             }
         }); */
     }
