@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 public class FormBuilder implements Form {
@@ -50,7 +49,7 @@ public class FormBuilder implements Form {
         // First constraints
         this.addGridBagConstraint(gridBagConstraints);
 
-        for (Map.Entry<String, JComponent> entry : fields.entrySet()) {
+        for (HashMap.Entry<String, JComponent> entry : fields.entrySet()) {
             if (autoJLabel) {
                 String name = entry.getKey();
                 panel.add(
@@ -100,7 +99,7 @@ public class FormBuilder implements Form {
         if (!bln) {
             return;
         }
-        for (Map.Entry<String, JComponent> entry : fields.entrySet()) {
+        for (HashMap.Entry<String, JComponent> entry : fields.entrySet()) {
             JComponent jField = entry.getValue();
             if (jField instanceof JTextField) {
                 JTextField jTextField = (JTextField) jField;
