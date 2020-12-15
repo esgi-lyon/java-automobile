@@ -6,6 +6,7 @@ import Model.Car.Car;
 import Model.Car.CarBrand;
 import Model.Car.CarModel;
 import Model.EntityManager;
+import Services.Layout;
 import View.SwingModules.Form;
 import View.SwingModules.FormBuilder;
 import View.SwingModules.List;

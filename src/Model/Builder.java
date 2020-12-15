@@ -1,10 +1,11 @@
 package Model;
 
 import Model.Car.Car;
+import Services.Entity.Entity;
 
 import java.util.ArrayList;
 
-public class Builder implements Entity{
+public class Builder implements Entity {
 
     /**
      * Default constructor

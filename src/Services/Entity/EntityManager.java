@@ -1,11 +1,14 @@
-package Model;
+package Services.Entity;
+
+import Services.Service;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class EntityManager {
+public class EntityManager implements Service {
+    private boolean loaded;
 
     private File file;
     private ArrayList<Entity> entityArrayList;
@@ -13,6 +16,7 @@ public class EntityManager {
     public EntityManager(Class entityClass) {
         this.file = this.createFile(entityClass.getSimpleName());
         entityArrayList = new ArrayList<>();
+        this.load();
     }
 
     // adds user to our collection
@@ -29,7 +33,7 @@ public class EntityManager {
 
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
             int i = 0;
-            while( i < entityArrayList.size()) {
+            while(i < entityArrayList.size()) {
                 item = entityArrayList.get(i);
                 save_data = item.toString();
                 i++;
@@ -51,6 +55,7 @@ public class EntityManager {
             // each lines to array
             objects = bufferedReader.lines().toArray();
             bufferedReader.close();
+            System.out.println(objects);
             return objects;
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,5 +77,16 @@ public class EntityManager {
         }
 
         return myFile;
+    }
+
+
+    @Override
+    public void load() {
+        loaded = true;
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return loaded;
     }
 }

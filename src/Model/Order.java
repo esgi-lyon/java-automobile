@@ -1,8 +1,9 @@
 package Model;
 
 import Model.Car.Car;
+import Services.Entity.Entity;
 
-public class Order implements Entity{
+public class Order implements Entity {
 
     private int id;
     private String status;

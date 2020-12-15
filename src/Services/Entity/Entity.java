@@ -1,4 +1,4 @@
-package Model;
+package Services.Entity;
 
 public interface Entity {
     /**

@@ -1,21 +1,27 @@
 package Controller;
 
+import Exceptions.ServiceRegisteryException;
 import Model.Order;
 import Model.Car.Car;
 
 import javax.swing.JOptionPane;
 
 import Model.Client;
-import Model.EntityManager;
 import View.SwingModules.List;
 import View.OrderView;
 import View.SwingModules.Form;
+import Services.Entity.EntityManager;
+import Services.Layout;
+import Services.Registery;
+import View.OrderView;
 
 /**
  * Process order and manage CRUD operations
  */
-public class OrderController {
+public class OrderController extends AbstractController {
     private EntityManager entityManager;
+    // Associated View
+    protected OrderView orderView;
 
     private Form orderForm;
     private List orderDetails;

@@ -1,5 +1,7 @@
 package Model;
 
+import Services.Entity.Entity;
+
 public class Client implements Entity {
 
     private String firstname;

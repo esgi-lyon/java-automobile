@@ -63,6 +63,14 @@ git commit -m "" # Placer tous les fichiers ready (en vert) dans un commit
 git remote -v # Voir les remotes distantes liés à notre remote locale
 git log -10 # historique des commit (-10 = en voir que 10)
 
+# Utiles...
+# Stocker vos modifications courantes avant de mettre à jour la branche
+git stash 
+# remettre dans la staging area ce que vous avez sauvegarder avec git stash
+git stash pop
+
+# Décomposition du checkout d'une version
+# et de la mise à jour d'une branche
 git fetch origin master
 git checkout origin/master
 git branch ma-branche
