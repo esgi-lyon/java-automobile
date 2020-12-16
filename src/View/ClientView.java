@@ -1,15 +1,12 @@
 package View;
 
 import Controller.AbstractController;
-import Controller.ClientController;
-import Exceptions.ServiceRegisteryException;
 import Services.Layout;
 import View.SwingModules.Form;
 import View.SwingModules.FormBuilder;
 import View.SwingModules.List;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.Optional;
 
 public class ClientView {

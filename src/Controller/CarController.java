@@ -1,5 +1,6 @@
 package Controller;
 
+import Exceptions.InternalException;
 import Exceptions.ServiceRegisteryException;
 import Model.Client;
 import Services.Entity.EntityManager;
@@ -18,14 +19,15 @@ public class CarController extends AbstractController {
 
     private CarView carView;
 
-    public CarController(Registery registery) throws ServiceRegisteryException {
+    public CarController(Registery registery) throws InternalException {
         super(registery);
         this.entityManager = this.getEntityManager(Client.class);
         carView = new CarView(this.getLayout(), this);
+        this.actions();
     }
 
     @Override
-    protected void actions(Layout ly) throws ServiceRegisteryException {
+    protected void actions() throws InternalException {
 
     }
 }

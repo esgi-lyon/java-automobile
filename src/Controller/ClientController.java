@@ -3,11 +3,8 @@ package Controller;
 import Exceptions.ServiceRegisteryException;
 import Services.Entity.EntityManager;
 import Model.Client;
-import Services.Layout;
 import Services.Registery;
 import View.ClientView;
-import View.SwingModules.List;
-import View.SwingModules.Form;
 
 import javax.swing.*;
 
@@ -21,14 +18,14 @@ public class ClientController extends AbstractController {
         super(registery);
         this.entityManager = this.getEntityManager(Client.class);
         clientView = new ClientView(this.getLayout(), this);
+        this.actions();
     }
 
     @Override
-    protected void actions(Layout ly) {
+    protected void actions() {
 
         // submit user
         clientView.createForm.submit(e -> {
-            System.out.println("Cleintzefizeijfjze");
             String firstname = clientView.getFirstname().trim();
             String lastname = clientView.getLastname().trim();
 

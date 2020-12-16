@@ -12,13 +12,14 @@ public class ShopController extends AbstractController {
     // Views
     // private ShopView shopView;
 
-    public ShopController(Registery registery) {
+    public ShopController(Registery registery) throws ServiceRegisteryException {
         super(registery);
         this.entityManager = new EntityManager(Shop.class);
+        this.actions();
     }
 
     @Override
-    protected void actions(Layout ly) throws ServiceRegisteryException {
-
+    protected void actions() throws ServiceRegisteryException {
+        Layout ly = this.getLayout();
     }
 }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Exceptions.InternalException;
 import Exceptions.ServiceRegisteryException;
 import Services.Entity.EntityManager;
 import Services.Layout;
@@ -37,5 +38,5 @@ public abstract class AbstractController {
         this.registery = registery;
     }
 
-    abstract protected void actions(Layout ly) throws ServiceRegisteryException;
+    abstract protected void actions() throws ServiceRegisteryException, InternalException;
 }

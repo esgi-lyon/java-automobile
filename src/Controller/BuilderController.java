@@ -16,10 +16,12 @@ public class BuilderController extends AbstractController {
         super(registery);
         this.entityManager = new EntityManager(Builder.class);
         view = new BuilderView(this.getLayout(), this);
+        this.actions();
     }
 
     @Override
-    protected void actions(Layout ly) throws ServiceRegisteryException {
+    protected void actions() throws ServiceRegisteryException {
+        Layout ly = this.getLayout();
         // Open list page from create form
         view.builderCreateForm.list(e -> {
 

@@ -55,7 +55,6 @@ public class EntityManager implements Service {
             // each lines to array
             objects = bufferedReader.lines().toArray();
             bufferedReader.close();
-            System.out.println(objects);
             return objects;
         } catch (IOException e) {
             e.printStackTrace();
