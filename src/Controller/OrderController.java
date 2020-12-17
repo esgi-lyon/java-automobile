@@ -1,6 +1,7 @@
 package Controller;
 
 import Exceptions.InternalException;
+import Exceptions.ServiceRegisteryException;
 import Model.Order;
 import Model.Car.Car;
 
@@ -35,7 +36,7 @@ public class OrderController extends AbstractController {
             Object clientSelected = orderView.getClientSelect().getSelectedItem();
             Object carSelect = orderView.getClientSelect().getSelectedItem();
 
-            if (clientSelected== this.orderView.NO_SELECT || carSelect == this.orderView.NO_SELECT) {
+            if (clientSelected == this.orderView.NO_SELECT || carSelect == this.orderView.NO_SELECT) {
                 JOptionPane.showMessageDialog(orderForm.getPanel(), "Sélectionnez un champs", "Error",
                         JOptionPane.ERROR_MESSAGE);
                 return;
@@ -63,6 +64,7 @@ public class OrderController extends AbstractController {
             this.entityManager.add(new Order(Integer.parseInt(id), client, car));
             
             this.orderView.orderForm.reset(true);
+            this.refresh();
         });
     }
 }

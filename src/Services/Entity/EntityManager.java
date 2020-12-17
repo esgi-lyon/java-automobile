@@ -12,7 +12,6 @@ public class EntityManager implements Service {
     protected Entity managedEn;
 
     public EntityManager(Class entityClass) {
-        
         entityArrayList = new ArrayList<>();
         this.loadEntityInstance(entityClass);
         this.load();

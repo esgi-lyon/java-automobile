@@ -69,6 +69,7 @@ public class OrderView {
 		carSelect.addItem(NO_SELECT);
 
 		for (Entity client: listeClients) {
+			System.out.println(client.toString());
 			clientSelect.addItem(client);
 		}
 

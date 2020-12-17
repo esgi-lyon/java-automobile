@@ -36,7 +36,7 @@ public class MainFrame extends JFrame {
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-    protected void init() {
+    public void init() {
         this.createMenu();
         // Bootstrap app
         setLayout(layout.card);

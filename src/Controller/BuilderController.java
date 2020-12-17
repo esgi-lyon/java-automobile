@@ -24,11 +24,11 @@ public class BuilderController extends AbstractController {
         Layout ly = this.getLayout();
         // Open list page from create form
         view.builderCreateForm.list(e -> {
-
+            this.refresh();
         });
 
         view.builderCreateForm.submit(e -> {
-
+            this.refresh();
         });
     }
 }

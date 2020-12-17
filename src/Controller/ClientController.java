@@ -43,11 +43,13 @@ public class ClientController extends AbstractController {
             this.entityManager.add(new Client(firstname, lastname));
             
             clientView.createForm.reset(true);
+            this.refresh();
         });
 
         // load users
         clientView.createForm.list(e -> {
             clientView.list.getDetails(this.entityManager.getAll());
+            this.refresh();
         });
 
         // TODO delete here
