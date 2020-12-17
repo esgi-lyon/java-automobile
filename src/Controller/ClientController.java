@@ -3,7 +3,7 @@ package Controller;
 import Exceptions.ServiceRegisteryException;
 import Services.Entity.EntityManager;
 import Model.Client;
-import Services.Registery;
+import Framework.Registery;
 import View.ClientView;
 
 import javax.swing.*;

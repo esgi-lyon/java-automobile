@@ -4,7 +4,7 @@ import Exceptions.ServiceRegisteryException;
 import Services.Entity.EntityManager;
 import Model.Builder;
 import Services.Layout;
-import Services.Registery;
+import Framework.Registery;
 import View.BuilderView;
 
 public class BuilderController extends AbstractController {

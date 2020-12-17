@@ -4,8 +4,8 @@ import Exceptions.InternalException;
 import Exceptions.ServiceRegisteryException;
 import Services.Entity.EntityManager;
 import Services.Layout;
-import Services.Registery;
-import Services.Service;
+import Framework.Registery;
+import Framework.Service;
 
 public abstract class AbstractController {
     private Registery registery;

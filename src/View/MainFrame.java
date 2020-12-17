@@ -4,9 +4,9 @@ import Controller.*;
 import Exceptions.InternalException;
 import Exceptions.ServiceNotLoadedException;
 import Services.Layout;
-import Services.Listener;
-import Services.Registery;
-import Services.Service;
+import Framework.Listener;
+import Framework.Registery;
+import Framework.Service;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

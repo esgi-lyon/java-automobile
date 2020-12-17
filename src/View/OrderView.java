@@ -1,6 +1,5 @@
 package View;
 
-import Controller.AbstractController;
 import Controller.OrderController;
 import Exceptions.InternalException;
 import Exceptions.ServiceRegisteryException;
@@ -21,7 +20,10 @@ import java.util.Optional;
 import Model.Client;
 
 public class OrderView {
+	// Table config
 	static String[] tableColumn = { "ID", "CAR", "CLIENT" };
+	public static String NO_SELECT = "Sélectionner ...";
+
 	OrderController controller;
 	static final String ADD = "order_add";
 	static final String LIST = "order_list";
@@ -63,8 +65,8 @@ public class OrderView {
 		ArrayList<Entity> listeClients = this.getClients();
 		ArrayList<Entity> listeCars = this.getCars();
 
-		clientSelect.addItem("Select...");
-		carSelect.addItem("Select...");
+		clientSelect.addItem(NO_SELECT);
+		carSelect.addItem(NO_SELECT);
 
 		for (Entity client: listeClients) {
 			clientSelect.addItem(client);
