@@ -56,6 +56,34 @@ this.getLayout(); // pour récupérer une classe Layout
 EntityManager car = this.getEntityManager(Car.class);
 ``` 
 
+#### l'entity manager
+
+Ce service permet la récupération et la sauvegarde sur la base de données.
+
+```java
+// On le récupère dans un controlleur comme cela
+EntityManager car = this.getEntityManager(Car.class);
+// ou 
+EntityManager car = new EntityManager(Car.class);
+```
+
+Il contient deux méthodes
+
+`add` : Ajout d'une instance à la base
+`save` : Confirmer la sauvegarde du nouveau fichier avec les nouvelles données
+
+##### création d'une entité
+
+> Pour créer une entité veiller à bien utiliser un constructuer vide pour que l'entity manager puisse correctement
+> utitilisé les méthodes clés de vos entités.
+
+> ATTENTION : l'ordre des champs est très important, il faut le même dans les méthode clés d'une entité pour ne pas inverser les données.
+
+Voici les **Deux méthodes** clés d'une entité 
+
+`toString()` : pour ajouter à la base les propriétés sous form de chaines de caractères séparés par des virgules
+`factory(String dbData)` : pour recréer une instance de l'objet à partir de la chaine de texte en bdd 
+
 #### Le cas du service Layout : 
 
 Le service Layout créer avec les composants swing nous permet de gérer la page d'accueil et donc de créer des liens vers les pages.
@@ -73,7 +101,6 @@ Voici les propriété du service layout :
 - `home`  regroupe les différentes pages de l'accueil que 'on référence dans une View
 
 - `menuBar` est pas très utilisé mais correspond au menu en haut à gauche. 
-
 
 #### Le form builder :
 

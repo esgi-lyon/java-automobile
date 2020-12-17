@@ -17,6 +17,9 @@ public class Order implements Entity {
         CANCELLED,
     };
 
+    public Order() {
+
+    }
 
     public Order(int id, Client client, Car car) {
     	this.id = id;
@@ -32,5 +35,10 @@ public class Order implements Entity {
                 ", Car{" + car.toString() + "}" +
                 ", Client{" + car.toString() + "}" +
                 ", Builder{" + builder.toString() + "}";
+    }
+
+    @Override
+    public Entity factory(String[] dbData) {
+        return null;
     }
 }

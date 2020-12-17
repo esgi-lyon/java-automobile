@@ -14,7 +14,7 @@ public abstract class AbstractController {
         setRegistery(registery != null ? registery : new Registery(null));
     }
 
-    protected EntityManager getEntityManager(Class entityClass) throws ServiceRegisteryException {
+    public EntityManager getEntityManager(Class entityClass) throws ServiceRegisteryException {
         // Init first services
         String name = entityClass.getSimpleName();
         return (EntityManager) (this.registery.has(name)

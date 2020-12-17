@@ -16,4 +16,9 @@ public class Shop implements Entity {
     public String toString() {
         return address;
     }
+
+    @Override
+    public Entity factory(String[] dbData) {
+        return null;
+    }
 }

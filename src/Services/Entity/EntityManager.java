@@ -13,10 +13,25 @@ public class EntityManager implements Service {
     private File file;
     private ArrayList<Entity> entityArrayList;
 
+    protected Entity managedEn;
+
     public EntityManager(Class entityClass) {
         this.file = this.createFile(entityClass.getSimpleName());
         entityArrayList = new ArrayList<>();
+        this.loadEntityInstance(entityClass);
         this.load();
+    }
+
+    void loadEntityInstance(Class entityClass) {
+        try {
+            managedEn = (Entity) entityClass.getDeclaredConstructor().newInstance();
+            // managedEn.ge
+        } catch (Exception e) {
+            System.err.println("This entity definition has errors " + entityClass.getName());
+            System.err.println("Verify methods and empty constructor usage");
+            e.printStackTrace();
+        }
+
     }
 
     // adds user to our collection
@@ -47,15 +62,21 @@ public class EntityManager implements Service {
         }
     }
 
-    // reads user from database file
-    public Object[] loadEntities() {
-        Object[] objects;
+    // reads entity from database file
+    public ArrayList<Entity> loadEntities() {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getPath()));
             // each lines to array
-            objects = bufferedReader.lines().toArray();
+            Object[] objects = bufferedReader.lines().toArray();
             bufferedReader.close();
-            return objects;
+
+            for (Object o: objects) {
+                String row = o.toString().trim();
+                String[] rows = row.split(",");
+                entityArrayList.add(managedEn.factory(rows));
+            }
+
+            return entityArrayList;
         } catch (IOException e) {
             e.printStackTrace();
         }

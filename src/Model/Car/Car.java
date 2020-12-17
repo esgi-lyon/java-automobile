@@ -1,6 +1,6 @@
 package Model.Car;
 
-import Model.Entity;
+import Services.Entity.Entity;
 
 public class Car implements Entity {
 
@@ -13,8 +13,6 @@ public class Car implements Entity {
 		this.carBrand = carBrand;
 		this.type = type;
 	}
-
-
 
 	private CarBrand carBrand;
 
@@ -40,6 +38,13 @@ public class Car implements Entity {
     public String toString() {
         return carBrand.getName() +
                 ", " + type.getName();
+    }
+
+    @Override
+    public Entity factory(String[] dbData) {
+        for (String str: dbData) {
+            return new Car(new CarBrand("TODO", "TODO"));
+        }
     }
 
     public void Operation1() {
