@@ -39,6 +39,6 @@ public class Order implements Entity {
 
     @Override
     public Entity factory(String[] dbData) {
-        return null;
+        return new Order(1, new Client(), new Car());
     }
 }

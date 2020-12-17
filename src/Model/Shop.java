@@ -19,6 +19,6 @@ public class Shop implements Entity {
 
     @Override
     public Entity factory(String[] dbData) {
-        return null;
+        return new Shop();
     }
 }

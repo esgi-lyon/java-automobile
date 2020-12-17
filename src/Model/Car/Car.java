@@ -42,9 +42,7 @@ public class Car implements Entity {
 
     @Override
     public Entity factory(String[] dbData) {
-        for (String str: dbData) {
-            return new Car(new CarBrand("TODO", "TODO"));
-        }
+        return new Car(new CarBrand(dbData[0]), new CarModel("TODO", "todo", 0.0));
     }
 
     public void Operation1() {

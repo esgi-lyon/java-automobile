@@ -58,6 +58,6 @@ public class Builder implements Entity {
 
     @Override
     public Entity factory(String[] dbData) {
-        return null;
+        return new Builder();
     }
 }
